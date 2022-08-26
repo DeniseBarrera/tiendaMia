@@ -1,4 +1,5 @@
 import { VStack, Button, Text, Image, Link } from '@chakra-ui/react'
+import { NavLink } from 'react-router-dom'
 
 const Item = ( { product }) => {
 
@@ -9,7 +10,9 @@ const Item = ( { product }) => {
         <Text>{product.product}</Text>
         <Text>${product.price}</Text>
         <Button colorScheme='green' size='xs'>
+            <NavLink to={`product/${product.id}`}>
             <Link>Ver detalle</Link>
+            </NavLink>
         </Button>
       </VStack>
     )
