@@ -12,7 +12,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
             <Button variant='ghost' colorScheme='green' size='sm' onClick={dicrease}>-</Button>
             <Text>{count}</Text>
             <Button variant='ghost' colorScheme='green' size='sm' onClick={increase}>+</Button>
-            <Button colorScheme='green' size='sm'>Agregar</Button>
+            <Button colorScheme='green' size='sm' onClick={onAdd}>Agregar</Button>
         </HStack>
     )
 }
