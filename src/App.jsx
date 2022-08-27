@@ -17,7 +17,7 @@ function App() {
             <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Mia"/>} />
             <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenidos a Tienda Mia"/>} />
             <Route path="/product/:id" element={<ItemDetailContainer/>} />
-            <Route path="/cart" element={<Cart />}/>
+            <Route path="/cart" element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

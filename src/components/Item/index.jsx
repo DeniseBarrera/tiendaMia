@@ -14,7 +14,7 @@ const Item = ( { product }) => {
             <Link>Ver detalle</Link>
             </NavLink>
         </Button>
-      </VStack>
+        </VStack>
     )
 }
 
