@@ -10,7 +10,7 @@ const CartWidget = () => {
     return(
         <NavLink to="/cart">
         < FcShop />
-        <Text className="badge" fontSize='xs'>{totalQuantity()}</Text>
+        <Text className="badge" fontSize='xs'>{totalQuantity}</Text>
         </NavLink>
     )
 }
