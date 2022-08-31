@@ -7,7 +7,7 @@ import { useCartContext } from '../../context/CartContext'
 
 const ItemDetail = ({ listProduct }) => {
 
-    const { image, product, price, stock, config, description, initial } = listProduct
+    const { Image, product, price, stock, config, description, initial} = listProduct
 
     const {isAdded, setIsAdded} = useState(false)
 
@@ -21,7 +21,7 @@ const ItemDetail = ({ listProduct }) => {
 
     return (
         <Center boxShadow='lg' p='6' rounded='md' bg='white' m="30px auto" maxWidth="800px">
-            <Image src={image} w="200px" />
+            <img src={Image} w="200px" />
             <VStack maxWidth="500px" align="left" mx="15px">
                 <HStack>
                     <Heading>{product}</Heading>
@@ -45,7 +45,7 @@ const ItemDetail = ({ listProduct }) => {
                     </Select>}
                 {
                     isAdded ?
-                        <NavLink to="/cart">
+                        <NavLink to="/Cart">
                             <Button colorScheme='green' size='sm'> Carrito </Button>
                         </NavLink>
                         :

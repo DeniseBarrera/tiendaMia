@@ -1,5 +1,6 @@
 import { VStack, Center, Text, Image, HStack, Button } from "@chakra-ui/react"
 import { useCartContext } from "../../context/CartContext"
+import { collection } from 'firebase/firestore'
 
 const Cart = () => {
 
