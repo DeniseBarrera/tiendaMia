@@ -1,12 +1,40 @@
 import { VStack, Center, Text, Image, HStack, Button } from "@chakra-ui/react"
 import { useCartContext } from "../../context/CartContext"
-import { collection } from 'firebase/firestore'
+import { db } from "../../Firebase"
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { toast } from "react-toastify"
+
+
 
 const Cart = () => {
 
     const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext()
     console.log(cartList)
 
+    const handleConfirm = () => {
+    const orden = {
+        items: cartList,
+        total: 300,
+        buyer: {
+            name: "Juan Membrives",
+            phone: "2616252525",
+            email: "juan@membrives.com"
+        },
+        date: serverTimestamp()
+    }
+    const ordersCollection = collection(db, "orders")
+    const consulta = addDoc(ordersCollection, orden)
+
+
+consulta
+.then((res) => {
+    console.log(res.id)
+    toast.success(`Orden ${res.id} creada`)
+})
+.catch(error => {
+    console.log(error)
+})
+}
     return (
         <Center>
             <VStack>
@@ -27,6 +55,7 @@ const Cart = () => {
                         <Button colorScheme='green' size='sm' onClick={cleanCart}>Vaciar carrito</Button>
                     </>
                 }
+                <Button colorScheme='green' size='sm' onClick={handleConfirm}> Guardar </Button>
             </VStack>
         </Center>
     )

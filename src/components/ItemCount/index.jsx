@@ -7,7 +7,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     const increase = () => count < stock && setCount(count + 1)
     const dicrease = () => count > initial && setCount(count - 1)   
     
-    const handlerClick = () => {onAdd(count)}
+    const handleClick = () => {onAdd(count)}
 
 
     return(
@@ -15,7 +15,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
             <Button variant='ghost' colorScheme='green' size='sm' onClick={dicrease}>-</Button>
             <Text>{count}</Text>
             <Button variant='ghost' colorScheme='green' size='sm' onClick={increase}>+</Button>
-            <Button colorScheme='green' size='sm' onClick={handlerClick}>Agregar</Button>
+            <Button colorScheme='green' size='sm' onClick={handleClick}>Agregar</Button>
         </HStack>
     )
 }

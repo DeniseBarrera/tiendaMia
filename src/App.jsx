@@ -7,7 +7,8 @@ import { Cart } from './components/Cart'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CartContextProvider } from "../src/context/CartContext"
 import "../src/Firebase"
-import { CartWidget } from './components/CartWidget'
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/product/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
+          <ToastContainer/>
         </CartContextProvider>
       </ChakraProvider>
     </BrowserRouter>

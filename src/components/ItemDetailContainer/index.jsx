@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
         .then((res) => {
             console.log(res.id)
             console.log(res.data)
-            setItem(res.data())
+            setListProduct(res.data())
         })
         .catch((err) => {
             console.log(err)

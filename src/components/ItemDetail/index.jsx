@@ -14,7 +14,7 @@ const ItemDetail = ({ listProduct }) => {
     const { addToCart, cartList } = useCartContext()
 
     const onAdd = (quantity) => {
-        addToCart(listProduct, quantity)
+        addToCart(listProduct,quantity)
         setIsAdded(true)
     }
 
@@ -25,7 +25,7 @@ const ItemDetail = ({ listProduct }) => {
             <VStack maxWidth="500px" align="left" mx="15px">
                 <HStack>
                     <Heading>{product}</Heading>
-                    <FaHeart size='20px' cursor="pointer" />
+                    <FaHeart size='30px' cursor="pointer" />
                 </HStack>
                 <Text className='bold' fontSize='2xl'>${price}</Text>
                 <Text> Stock: {stock}</Text>

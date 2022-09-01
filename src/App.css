@@ -1,12 +1,13 @@
 .badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width:15px;
-    height: 15px;
-    color:#fff;
-    background-color: green;
+    top: 15px;
+    right: 15px;
+    width:20px;
+    height: 20px;
+    color:rgb(202, 200, 200);
+    background-color: rgb(123, 95, 168);
     border-radius: 50%;
     text-align: center;
 
 }
+

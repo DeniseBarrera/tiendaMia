@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../Firebase"
+import { toast } from "react-toastify"
 
 
 
@@ -23,9 +24,10 @@ const ItemListContainer = ({ greeting }) => {
     useEffect(() => {
 
         const productsCollection = collection(db, "productos")
-        const filtro = query(productsCollection, where("category", "==", "category"))
-        console.log(filtro)
-        const consulta = getDocs(productsCollection)
+        const filtro = query(productsCollection, 
+            where("category", "==", "category"),
+            where("price",">",10))
+        const consulta = getDocs(filtro)
 
         consulta
             .then(snapshot => {
@@ -40,6 +42,7 @@ const ItemListContainer = ({ greeting }) => {
             })
             .catch(err => {
                 console.log(err)
+                toast.error("Error al cargar el producto")
             })
 
         setLoading(true)
