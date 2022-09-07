@@ -19,7 +19,7 @@ const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true)
 
     const { category } = useParams()
-    console.log(category)
+    
 
     useEffect(() => {
 
@@ -27,7 +27,7 @@ const ItemListContainer = ({ greeting }) => {
         const filtro = query(productsCollection, 
             where("category", "==", "category"),
             where("price",">",10))
-        const consulta = getDocs(filtro)
+        /*const consulta = getDocs(filtro)
 
         consulta
             .then(snapshot => {
@@ -43,7 +43,7 @@ const ItemListContainer = ({ greeting }) => {
             .catch(err => {
                 console.log(err)
                 toast.error("Error al cargar el producto")
-            })
+            })*/
 
         setLoading(true)
         customFetch(products)

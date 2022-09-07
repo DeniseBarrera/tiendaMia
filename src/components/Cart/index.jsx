@@ -8,8 +8,7 @@ import { toast } from "react-toastify"
 
 const Cart = () => {
 
-    const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext()
-    console.log(cartList)
+    const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext();
 
     const handleConfirm = () => {
     const orden = {
@@ -28,11 +27,9 @@ const Cart = () => {
 
 consulta
 .then((res) => {
-    console.log(res.id)
     toast.success(`Orden ${res.id} creada`)
 })
 .catch(error => {
-    console.log(error)
 })
 }
     return (
@@ -55,7 +52,7 @@ consulta
                         <Button colorScheme='green' size='sm' onClick={cleanCart}>Vaciar carrito</Button>
                     </>
                 }
-                <Button colorScheme='green' size='sm' onClick={handleConfirm}> Guardar </Button>
+                <Button size='md' height='48px' width='200px' border='2px' borderColor='green.500' onClick={handleConfirm}> Finalizar compra  </Button>
             </VStack>
         </Center>
     )

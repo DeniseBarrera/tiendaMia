@@ -9,12 +9,12 @@ const ItemDetail = ({ listProduct }) => {
 
     const { Image, product, price, stock, config, description, initial} = listProduct
 
-    const {isAdded, setIsAdded} = useState(false)
+    const [isAdded, setIsAdded] = useState(false)
 
     const { addToCart, cartList } = useCartContext()
 
-    const onAdd = (quantity) => {
-        addToCart(listProduct,quantity)
+    const onAdd=(quantity) => {
+        addToCart(listProduct, quantity)
         setIsAdded(true)
     }
 
@@ -45,7 +45,7 @@ const ItemDetail = ({ listProduct }) => {
                     </Select>}
                 {
                     isAdded ?
-                        <NavLink to="/Cart">
+                        <NavLink to="/cart">
                             <Button colorScheme='green' size='sm'> Carrito </Button>
                         </NavLink>
                         :
