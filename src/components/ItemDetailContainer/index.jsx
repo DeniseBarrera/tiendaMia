@@ -5,7 +5,7 @@ import { customFetch } from '../../utils/customFetch'
 import { ItemDetail } from '../ItemDetail'
 import { useParams } from "react-router-dom"
 import { db } from "../../Firebase"
-import { collection, getDoc, doc, serverTimestamp } from 'firebase/firestore'
+import { collection, getDoc, doc } from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
@@ -14,7 +14,6 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
 
     const { id } = useParams();
-    console.log(typeof id)
     useEffect(() => {
 
         const productsCollection = collection(db, "productos")
@@ -23,12 +22,9 @@ const ItemDetailContainer = () => {
 
         consulta
         .then((res) => {
-            console.log(res.id)
-            console.log(res.data)
             setListProduct(res.data())
         })
         .catch((err) => {
-            console.log(err)
         })
 
         setLoading(true)

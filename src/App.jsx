@@ -1,5 +1,4 @@
 import './App.css'
-import { ChakraProvider, Heading } from '@chakra-ui/react'
 import { Navbar } from './components/Navbar'
 import { ItemListContainer } from './components/ItemListContainer'
 import { ItemDetailContainer } from './components/ItemDetailContainer'
@@ -9,26 +8,29 @@ import { CartContextProvider } from "../src/context/CartContext"
 import "../src/Firebase"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Checkout } from './components/Checkout'
 
 
 function App() {
 
 
   return (
+
     <BrowserRouter>
-      <ChakraProvider>
-        <CartContextProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Mia" />} />
-            <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenidos a Tienda Mia" />} />
-            <Route path="/product/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-          <ToastContainer/>
-        </CartContextProvider>
-      </ChakraProvider>
+      <CartContextProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Mia" />} />
+          <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenidos a Tienda Mia" />} />
+          <Route path="/product/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+        <ToastContainer />
+      </CartContextProvider>
     </BrowserRouter>
+
+
   )
 }
 

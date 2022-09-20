@@ -1,4 +1,4 @@
-import { VStack, Center, Text, Image, Heading, Select, HStack, Button } from '@chakra-ui/react'
+import { VStack, Center, Text, Heading, Select, HStack, Button, Stack } from '@chakra-ui/react'
 import { useState } from 'react'
 import { FaCreditCard, FaRegCreditCard, FaHeart } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
@@ -33,14 +33,14 @@ const ItemDetail = ({ listProduct }) => {
                     <FaCreditCard /><FaRegCreditCard />
                 </HStack>
 
-
+    
                 <Text fontSize='xs'>{description}</Text>
                 {config.material &&
-                    <Select placeholder="Material">
+                    <Select placeholder="Material" variant='filled'>
                         {config.material.map((mat, index) => <option className='joyas' key={`${mat}-${index}`} />)}
                     </Select>}
                 {config.size &&
-                    <Select placeholder="Sizes">
+                    <Select placeholder="Sizes" variant='filled'>
                         {config.size.map((siz, index) => <option className='joyas' key={`${siz}-${index}`} />)}
                     </Select>}
                 {
