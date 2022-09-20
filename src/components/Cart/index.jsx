@@ -1,8 +1,5 @@
 import { VStack, Center, Text, Image, HStack, Button } from "@chakra-ui/react"
 import { useCartContext } from "../../context/CartContext"
-
-
-
 import React, { useState } from "react"
 import { NavLink } from 'react-router-dom'
 
@@ -23,7 +20,7 @@ const Cart = () => {
             },
             date: serverTimestamp()
         }
-        
+
 
     }
     return (

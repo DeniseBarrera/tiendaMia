@@ -35,7 +35,7 @@ const Checkout = () => {
 
         const order = {
             items: cartList,
-            buyer: {...costumer},
+            buyer: { ...costumer },
             price: totalPrice(),
         }
         setSubmit(true)
@@ -59,7 +59,7 @@ const Checkout = () => {
             navigate('/')
         }, 3000)
 
-        
+
 
         return (
             <VStack>
@@ -85,18 +85,18 @@ const Checkout = () => {
                 <FormLabel> Domicilio: </FormLabel>
                 <Input placeholder='Ingrese su Domicilio..' name='address' value={costumer.address} onChange={handlerChangeInput} />
                 <Button type='submit' size='md' height='48px' width='200px' border='2px' borderColor='green.500' onClick={handlerSubmit}>Confirmar Compra</Button>
-                </FormControl>
-                <hr/>
-                {
-                    submit
-                    && <VStack>
-                        <Text fontSize='3xl' as='b'> Los datos ingresados son: </Text>
-                        <Text fontSize='lg' as='i'>Nombre: {costumer.name}</Text>
-                        <Text fontSize='lg' as='i'> Apellido: {costumer.lastname}</Text>
-                        <Text fontSize='lg' as='i'> Correo Electrónico: {costumer.email}</Text>
-                        <Text fontSize='lg' as='i'> Domicilio: {costumer.address}</Text>
-                        </VStack>
-                }
+            </FormControl>
+            <hr />
+            {
+                submit
+                && <VStack>
+                    <Text fontSize='3xl' as='b'> Los datos ingresados son: </Text>
+                    <Text fontSize='lg' as='i'>Nombre: {costumer.name}</Text>
+                    <Text fontSize='lg' as='i'> Apellido: {costumer.lastname}</Text>
+                    <Text fontSize='lg' as='i'> Correo Electrónico: {costumer.email}</Text>
+                    <Text fontSize='lg' as='i'> Domicilio: {costumer.address}</Text>
+                </VStack>
+            }
         </VStack>
     )
 }
