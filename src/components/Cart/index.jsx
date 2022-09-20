@@ -1,8 +1,8 @@
 import { VStack, Center, Text, Image, HStack, Button } from "@chakra-ui/react"
 import { useCartContext } from "../../context/CartContext"
-import { db } from "../../Firebase"
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
-import { toast } from "react-toastify"
+
+
+
 import React, { useState } from "react"
 import { NavLink } from 'react-router-dom'
 
@@ -23,16 +23,7 @@ const Cart = () => {
             },
             date: serverTimestamp()
         }
-        const ordersCollection = collection(db, "orders")
-        const consulta = addDoc(ordersCollection, orden)
-
-        consulta
-            .then((res) => {
-                toast(`Orden ${res.id} creada`)
-            })
-            .catch(error => {
-            })
-
+        
 
     }
     return (
@@ -56,7 +47,6 @@ const Cart = () => {
                             <Button colorScheme='green' size='sm' onClick={cleanCart}>Vaciar carrito</Button>
                         </>
                     }
-                    <Button size='md' height='48px' width='200px' border='2px' borderColor='green.500' onClick={handleConfirm}> Finalizar compra  </Button>
                 </VStack>
                 <VStack>
                     <Button size='md' height='48px' width='200px' border='2px' borderColor='green.500'>
